@@ -27,7 +27,7 @@ This system uses **Retrieval-Augmented Generation (RAG)** to:
 The model only answers using retrieved context, reducing hallucinations and increasing reliability.
 
 
-## 🏗 Architecture
+## Architecture
 User Question
 ↓
 SentenceTransformer Embedding
@@ -54,7 +54,7 @@ Grounded Answer + Source Display
 
 
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Python**
 - **Streamlit** – UI
