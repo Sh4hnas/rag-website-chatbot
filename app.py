@@ -57,19 +57,19 @@ with st.sidebar:
                 st.session_state.chunks = chunks
                 st.session_state.model = embedding_model
                 
-                st.success(f"✅ Processed! {len(chunks)} chunks created.")
+                st.success(f"Processed! {len(chunks)} chunks created.")
                 
             except (NetworkError, ContentExtractionError, ChunkingError, VectorStoreError, EmbeddingError) as e:
-                st.error(f"❌ Error: {str(e)}")
+                st.error(f"Error: {str(e)}")
             except Exception as e:
-                st.error(f"❌ Unexpected error: {str(e)}")
+                st.error(f"Unexpected error: {str(e)}")
         else:
-            st.warning("⚠️ Please enter a URL.")
+            st.warning(" Please enter a URL.")
     
     # Show info if processed
     if st.session_state.chunks is not None:
         st.divider()
-        st.info(f"📊 Chunks: {len(st.session_state.chunks)}")
+        st.info(f" Chunks: {len(st.session_state.chunks)}")
     
     # Clear chat button
     if len(st.session_state.messages) > 0:
@@ -79,7 +79,7 @@ with st.sidebar:
             st.rerun()
 
 # Main content
-st.title("💬 Chat with Website")
+st.title(" Chat with Website")
 
 # Display chat messages
 for msg in st.session_state.messages:
@@ -131,7 +131,7 @@ Answer:"""
                         st.write(answer)
                         
                         # Show sources
-                        with st.expander("📚 View Sources"):
+                        with st.expander(" View Sources"):
                             for idx, source_idx in enumerate(I[0]):
                                 st.text_area(
                                     f"Source {idx + 1}",
@@ -148,4 +148,4 @@ Answer:"""
                     st.error(error_msg)
                     st.session_state.messages.append({"role": "assistant", "content": error_msg})
 else:
-    st.info("👈 Please process a website first using the sidebar.")
+    st.info(" Please process a website first using the sidebar.")
